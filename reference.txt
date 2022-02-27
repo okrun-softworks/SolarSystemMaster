@@ -1,13 +1,13 @@
 --------------------------- Solar System Layout ---------------------------
-|||||https://en.wikipedia.org/wiki/Sun
+||||| https://en.wikipedia.org/wiki/Sun |||||
 Sun
   Mean radius[km]: 
-    4.379×10^6
+    696,342
   Rotation Period(sidereal)[d]:
     25.05 
   Mean Radiance[|sol]
     2.009×10^7 W·m^−2·sr^−1
-|||||https://en.wikipedia.org/wiki/Mercury
+||||| https://en.wikipedia.org/wiki/Mercury |||||
 Mercury
   Orbital Period(sidereal)[d]: 
     87.9691
@@ -25,7 +25,7 @@ Mercury
     58.646
   Axial Tilt(to orbit)[°]:
     2.04
-|||||https://en.wikipedia.org/wiki/Venus
+||||| https://en.wikipedia.org/wiki/Venus |||||
 Venus
   Orbital Period(sidereal)[d]: 
     224.701
@@ -43,7 +43,7 @@ Venus
     -243.0226
   Axial Tilt(to orbit)[°]:
     177.36
-|||||https://en.wikipedia.org/wiki/Earth
+||||| https://en.wikipedia.org/wiki/Earth |||||
 Earth
   Orbital Period(sidereal)[d]: 
     365.256
@@ -62,7 +62,7 @@ Earth
   Axial Tilt(to orbit)[°]:
     23.43
 
-  \\\\\https://en.wikipedia.org/wiki/Moon
+  \\\\\ https://en.wikipedia.org/wiki/Moon /////
   Moon
     Orbital Period(sidereal)[d]: 
       27.321
@@ -80,7 +80,7 @@ Earth
       27.321
     Axial Tilt(to orbit)[°]:
       6.687
-|||||https://en.wikipedia.org/wiki/Mars
+||||| https://en.wikipedia.org/wiki/Mars |||||
 Mars
   Orbital Period(sidereal)[d]: 
     686.980
@@ -98,7 +98,7 @@ Mars
     1.025
   Axial Tilt(to orbit)[°]:
     25.19
-  \\\\\https://en.wikipedia.org/wiki/Phobos_(moon)
+  \\\\\ https://en.wikipedia.org/wiki/Phobos_(moon) /////
   Phobos
     Orbital Period(sidereal)[d]: 
       0.318
@@ -116,7 +116,7 @@ Mars
       0.318
     Axial Tilt(to orbit)[°]:
       0
-  \\\\\https://en.wikipedia.org/wiki/Deimos_(moon)    
+  \\\\\ https://en.wikipedia.org/wiki/Deimos_(moon) /////    
   Deimos
     Orbital Period(sidereal)[d]: 
       1.263
@@ -133,7 +133,7 @@ Mars
     Rotation Period(sidereal)[d]:
       1.025
     Axial Tilt(to orbit)[°]:
-|||||https://en.wikipedia.org/wiki/Jupiter
+||||| https://en.wikipedia.org/wiki/Jupiter ||||||
 Jupiter
   Orbital Period(sidereal)[d]: 
     4,332.59
@@ -151,7 +151,7 @@ Jupiter
     9.9250
   Axial Tilt(to orbit)[°]:
     3.13
-  \\\\\https://en.wikipedia.org/wiki/Moons_of_Jupiter
+  \\\\\ https://en.wikipedia.org/wiki/Moons_of_Jupiter /////
   _________(4)
   __Inner__
     \\\\\-1
@@ -177,767 +177,909 @@ Jupiter
     \\\\\-3
     Amalthea
         Diameter[km]:
-
+          250, 146, 128
         Semi-major axis[km]:
-
+          181,366
         Orbital period[d]:
-
+          0.5012
         Inclination[°]
-
+          2.565
     \\\\\-4
     Thebe
         Diameter[km]:
-
+          116, 98, 84
         Semi-major axis[km]:
-
+          222,452
         Orbital period[d]:
-
+          0.6778
         Inclination[°]
-
+          2.909
   ____________(4)
   __Galilean__
     \\\\\-5
     Io
         Diameter[km]:
-
+          3643.2
         Semi-major axis[km]:
-
+          421,700
         Orbital period[d]:
-
+          1.7691
         Inclination[°]
-
+          0.050
     \\\\\-6
     Europa
         Diameter[km]:
-   
+          3121.6
         Semi-major axis[km]:
-   
+          671,034
         Orbital period[d]:
-   
+          3.5512
         Inclination[°]
-
+          0.471
     \\\\\-7
     Ganymede
         Diameter[km]:
-   
+          5268.2
         Semi-major axis[km]:
-   
+          1070412
         Orbital period[d]:
-   
+          7.1546
         Inclination[°]
-
+          0.204
     \\\\\-8
     Callisto
         Diameter[km]:
-
+          4820.6
         Semi-major axis[km]:
-
+          1882709
         Orbital period[d]:
-
+          16.689
         Inclination[°]
-
+          0.205
   _______________(1)
   __Ungrouped-0__
     \\\\\-9
     Themisto
       Diameter[km]:
-
+        9
       Semi-major axis[km]:
-
+        7405000
       Orbital period[d]:
-
+        130.18
       Inclination[°]
-
+        44.590
   ___________(7)
   __Himalia__
     \\\\\-10
     Leda
       Diameter[km]:
-
+        21.5
       Semi-major axis[km]:
-
+        11196000
       Orbital period[d]:
-
+        242.02
       Inclination[°]
+        27.641
     \\\\\-11
     Ersa
       Diameter[km]:
-
+        3
       Semi-major axis[km]:
-
+        11348700
       Orbital period[d]:
-
+        246.99
       Inclination[°]
+        31.028
     \\\\\-12
     Pandia
       Diameter[km]:
-
+        3
       Semi-major axis[km]:
-
+        11462300
       Orbital period[d]:
-
+        250.71
       Inclination[°]
+        27.023
     \\\\\-13
     Himalia
       Diameter[km]:
-
+        139.6
       Semi-major axis[km]:
-
+        11497400
       Orbital period[d]:
-
+        251.86
       Inclination[°]
+        30.214
     \\\\\-14
     Lysithea
       Diameter[km]:
-
+        42.2
       Semi-major axis[km]:
-
+        11628300
       Orbital period[d]:
-
+        256.17
       Inclination[°]
+        27.015
     \\\\\-15
     Elara
       Diameter[km]:
-
+        79.9
       Semi-major axis[km]:
-
+        11671600
       Orbital period[d]:
-
+        257.60
       Inclination[°]
+        30.216
     \\\\\-16
     Dia
       Diameter[km]:
-
+        4
       Semi-major axis[km]:
-
+        12304900
       Orbital period[d]:
-
+        278.85
       Inclination[°]
+        27.481
   _______________(2)
   __Ungrouped-1__
     \\\\\-17
     Carpo
       Diameter[km]:
-
+        3
       Semi-major axis[km]:
-
+        17151800
       Orbital period[d]:
-
+        458.90
       Inclination[°]
+        50.138
     \\\\\-18
     Valetudo
       Diameter[km]:
-
+        1
       Semi-major axis[km]:
-
+        18819000
       Orbital period[d]:
-
+        527.41
       Inclination[°]
+        32.033
   __________(22)
   __Ananke__
     \\\\\-19
     Euporie
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        19593900
       Orbital period[d]:
-
+        -560.32
       Inclination[°]
+        147.851
     \\\\\-20
     Eupheme
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        20126300
       Orbital period[d]:
-
+        -583.31
       Inclination[°]
+        150.042
     \\\\\-21
     S/2003 J 18
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        20348800
       Orbital period[d]:
-
+        -593.01
       Inclination[°]
+        142.783
     \\\\\-22
     S/2010 J 2
       Diameter[km]:
-
+        1
       Semi-major axis[km]:
-
+        20436700
       Orbital period[d]:
-
+        -596.86
       Inclination[°]
+        148.697
     \\\\\-23
     Helike
       Diameter[km]:
-
+        4
       Semi-major axis[km]:
-
+        20479500
       Orbital period[d]:
-
+        -598.74
       Inclination[°]
+        155.067
     \\\\\-24
     S/2003 J 16
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        20512500
       Orbital period[d]:
-
+        -600.18
       Inclination[°]
+        151.163
     \\\\\-25
     S/2003 J 2
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        20554400
       Orbital period[d]:
-
+        -602.02
       Inclination[°]
+        149.204
     \\\\\-26
     Euanthe
       Diameter[km]:
-
+        3
       Semi-major axis[km]:
-
+        20583300
       Orbital period[d]:
-
+        -603.29
       Inclination[°]
+        146.808
     \\\\\-27
     S/2017 J 7
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        20600100
       Orbital period[d]:
-
+        -604.03
       Inclination[°]
+        146.739
     \\\\\-28
     Hermippe
       Diameter[km]:
-
+        4
       Semi-major axis[km]:
-
+        20666200
       Orbital period[d]:
-
+        -606.94
       Inclination[°]
-    \\\\\-29
+        146.739
+    \\\\\-29 
     Praxidike
       Diameter[km]:
-
+        7
       Semi-major axis[km]:
-
+        20682900
       Orbital period[d]:
-
+        -607.68
       Inclination[°]
+        149.692
     \\\\\-30
     Thyone
       Diameter[km]:
-
+        4
       Semi-major axis[km]:
-
+        20712800
       Orbital period[d]:
-
+        -609.00
       Inclination[°]
+        147.328
     \\\\\-31
     Thelxinoe
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        20893300
       Orbital period[d]:
-
+        -616.97
       Inclination[°]
+        146.916
     \\\\\-32
     S/2017 J 3
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        20976900
       Orbital period[d]:
-
+        -620.68
       Inclination[°]
+        147.968
     \\\\\-33
     Ananke
       Diameter[km]:
-
+        29.1
       Semi-major axis[km]:
-
+        21042500
       Orbital period[d]:
-
+        -623.59
       Inclination[°]
+        148.675
     \\\\\-34
     Mneme
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        21064100
       Orbital period[d]:
-
+        -624.55
       Inclination[°]
+        151.087
     \\\\\-35
     S/2016 J 1
       Diameter[km]:
-
+        1
       Semi-major axis[km]:
-
+        21154000
       Orbital period[d]:
-
+        -628.56
       Inclination[°]
+        143.824
     \\\\\-36
     Orthosie
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        21171000
       Orbital period[d]:
-
+        -629.31
       Inclination[°]
+        148.488
     \\\\\-37
     Harpalyke
       Diameter[km]:
-
+        4
       Semi-major axis[km]:
-
+        21280200
       Orbital period[d]:
-
+        -634.19
       Inclination[°]
+        148.298
     \\\\\-38
     Locaste
       Diameter[km]:
-
+        5
       Semi-major axis[km]:
-
+        21431800
       Orbital period[d]:
-
+        -640.98
       Inclination[°]
+        149.424
     \\\\\-39
     S/2017 J 9
       Diameter[km]:
-
+        3
       Semi-major axis[km]:
-
+        21492900
       Orbital period[d]:
-
+        -643.72
       Inclination[°]
+        155.775
     \\\\\-40
     S/2003 J 12
       Diameter[km]:
-
+        1
       Semi-major axis[km]:
-
+        21557700
       Orbital period[d]:
-
+        -646.64
       Inclination[°]
+        154.690
   ______________(1)
   __Pasiphae-0__
     \\\\\-41
     S/2003 J 4
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        22048600
       Orbital period[d]:
-
+        -668.85
       Inclination[°]
+        149.401
   ___________(5)
   __Carme-0__
     \\\\\-42
     Erinome
       Diameter[km]:
-
+        3
       Semi-major axis[km]:
-
+        22354300
       Orbital period[d]:
-
+        -682.80
       Inclination[°]
+        164.821
     \\\\\-43
     Aitne
       Diameter[km]:
-
+        3
       Semi-major axis[km]:
-
+        22386500
       Orbital period[d]:
-
+        -684.28
       Inclination[°]
+        166.238
     \\\\\-44
     Herse
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        22408800
       Orbital period[d]:
-
+        -685.30
       Inclination[°]
+        164.347
     \\\\\-45
     Taygete
       Diameter[km]:
-
+        5
       Semi-major axis[km]:
-
+        22433500
       Orbital period[d]:
-
+        -686.44
       Inclination[°]
+        163.261
     \\\\\-46
     S/2017 J 2
       Diameter[km]:
-
+        2
       Semi-major axis[km]:
-
+        22472900
       Orbital period[d]:
-
+        -688.25
       Inclination[°]
+        165.676
     ______________(1)
     __Pasiphae-1__
       \\\\\-47
       S/2017 J 6
         Diameter[km]:
-
+          2
         Semi-major axis[km]:
-
+          22543800
         Orbital period[d]:
-
+          -691.51
         Inclination[°]
+          155.185
     ___________(5)
     __Carme-1__
       \\\\\-48
       Eukelade
         Diameter[km]:
-
+          4
         Semi-major axis[km]:
-
+          22576700
         Orbital period[d]:
-
+          -693.02
         Inclination[°]
+          163.822
       \\\\\-49
       Carme
         Diameter[km]:
-  
+          46.7
         Semi-major axis[km]:
-  
+          22579900
         Orbital period[d]:
-  
+          -693.17
         Inclination[°]
+          163.535
       \\\\\-50
       S/2003 J 19
         Diameter[km]:
-  
+          2
         Semi-major axis[km]:
-  
+          22752500
         Orbital period[d]:
-  
+          -701.13
         Inclination[°]
+          167.738
       \\\\\-51
       Isonoe
         Diameter[km]:
-  
+          4
         Semi-major axis[km]:
-  
+          22776700
         Orbital period[d]:
-  
+          -702.25
         Inclination[°]
+          162.834
       \\\\\-52
       S/2003 J 10
         Diameter[km]:
-  
+          2
         Semi-major axis[km]:
-  
+          22896200
         Orbital period[d]:
-  
+          -707.78
         Inclination[°]
+          163.481
       ______________(3)
       __Pasiphae-2__
         \\\\\-53
         Autonoe
           Diameter[km]:
-
+            4
           Semi-major axis[km]:
-
+            22933400
           Orbital period[d]:
-
+            -709.51
           Inclination[°]
+            148.145
         \\\\\-54
         Philophrosyne
           Diameter[km]:
-    
+            2
           Semi-major axis[km]:
-    
+            22939900
           Orbital period[d]:
-    
+            -709.81
           Inclination[°]
+            147.900
         \\\\\-55
         Cyllene
           Diameter[km]:
-    
+            2
           Semi-major axis[km]:
-    
+            22965200
           Orbital period[d]:
-    
+            -710.99
           Inclination[°]
+            150.047
       ___________(3)
       __Carme-2__
         \\\\\-56
         Pasithee
           Diameter[km]:
-    
+            2
           Semi-major axis[km]:
-    
+            22967800
           Orbital period[d]:
-    
+            -711.11
           Inclination[°]
+            164.727
         \\\\\-57
         S/2010 J 1
           Diameter[km]:
-    
+            2
           Semi-major axis[km]:
-    
+            22967800
           Orbital period[d]:
-    
+            -712.00
           Inclination[°]
+            164.727
         \\\\\-58
         S/2003 J 24
           Diameter[km]:
-    
+            3
           Semi-major axis[km]:
-    
+            23088000
           Orbital period[d]:
-    
+            -715.4
           Inclination[°]
+            162.105
         ______________(2)
         __Pasiphae-3__
           \\\\\-59
           Pasiphae
             Diameter[km]:
-
+              57.8
             Semi-major axis[km]:
-
+              23119300
             Orbital period[d]:
-
+              -718.16
             Inclination[°]
+              151.998
           \\\\\-60
           Sponde
             Diameter[km]:
-      
+              2
             Semi-major axis[km]:
-      
+              23146500
             Orbital period[d]:
-      
+              -719.42
             Inclination[°]
+              144.563
         ___________(1)
         __Carme-3__
           \\\\\-61
           S/2017 J 8
             Diameter[km]:
-      
+              1
             Semi-major axis[km]:
-      
+              23173700
             Orbital period[d]:
-      
+              -720.69
             Inclination[°]
+              166.071
           ______________(1)
           __Pasiphae-4__
             \\\\\-62
             Eurydome
               Diameter[km]:
-
+                3
               Semi-major axis[km]:
-
+                23214500
               Orbital period[d]:
-
+                -722.59
               Inclination[°]
+                150.289
           ___________(2)
           __Carme-4__
             \\\\\-63
             S/2017 J 5
               Diameter[km]:
-         
+                2
               Semi-major axis[km]:
-         
+                23352500
               Orbital period[d]:
-         
+                -729.05
               Inclination[°]
+                166.555
             \\\\\-64
             Kalyke
               Diameter[km]:
-
+                6.9
               Semi-major axis[km]:
-
+                23377400
               Orbital period[d]:
-
+                -730.21
               Inclination[°]
+                166.899
             ______________(1)
             __Pasiphae-5__
               \\\\\-65
               Hegemone
                 Diameter[km]:
-
+                  3
                 Semi-major axis[km]:
-
+                  23422300
                 Orbital period[d]:
-
+                  -732.32
                 Inclination[°]
+                  154.675
             ___________(3)
             __Carme-5__
               \\\\\-66
               Kale
                 Diameter[km]:
-          
+                  2
                 Semi-major axis[km]:
-          
+                  23512200
                 Orbital period[d]:
-          
+                  -736.54
                 Inclination[°]
+                  166.177
               \\\\\-67
               Kallichore
                 Diameter[km]:
-          
+                  2
                 Semi-major axis[km]:
-          
+                  23552900
                 Orbital period[d]:
-          
+                  -738.45
                 Inclination[°]
+                  164.799
               \\\\\-68
               S/2011 J 1
                 Diameter[km]:
-          
+                  2
                 Semi-major axis[km]:
-          
+                  23714400
                 Orbital period[d]:
-          
+                  -746.06
                 Inclination[°]
+                  164.799
               ______________(1)
               __Pasiphae-6__
                 \\\\\-69
                 S/2017 J 1
                   Diameter[km]:
-
+                    2
                   Semi-major axis[km]:
-
+                    23753600
                   Orbital period[d]:
-
+                    -747.91
                   Inclination[°]
+                    147.253
               ___________(3)
               __Carme-6__
                 \\\\\-70
                 Chaldene
                   Diameter[km]:
-            
+                    4
                   Semi-major axis[km]:
-            
+                    23848300
                   Orbital period[d]:
-            
+                    -752.39
                   Inclination[°]
+                    162.749
                 \\\\\-71
                 Arche
                   Diameter[km]:
-            
+                    3
                   Semi-major axis[km]:
-            
+                    23926500
                   Orbital period[d]:
-            
+                    -756.09
                   Inclination[°]
+                    166.408
                 \\\\\-72
                 Eirene
                   Diameter[km]:
-            
+                    4
                   Semi-major axis[km]:
-            
+                    23934500
                   Orbital period[d]:
-            
+                    -756.47
                   Inclination[°]
+                    162.713
                 ______________(2)
                 __Pasiphae-7__
                   \\\\\-73
                   Kore
                     Diameter[km]:
-
+                      2
                     Semi-major axis[km]:
-
+                      23999700
                     Orbital period[d]:
-
+                      -759.56
                     Inclination[°]
+                      136.628
                   \\\\\-74
                   S/2011 J 2
                     Diameter[km]:
-              
+                      1
                     Semi-major axis[km]:
-              
+                      24114700
                     Orbital period[d]:
-              
+                      -765.03
                     Inclination[°]
+                      152.125
                 ___________(1)
                 __Carme-7__
                   \\\\\-75
                   S/2003 J 9
                     Diameter[km]:
-              
+                      1
                     Semi-major axis[km]:
-              
+                      24168700
                     Orbital period[d]:
-              
+                      -767.60
                     Inclination[°]
+                      166.334
                   ______________(5)
                   __Pasiphae-8__ 
                     \\\\\-76
                     Megaclite
                       Diameter[km]:
-                
+                        5
                       Semi-major axis[km]:
-                
+                        24212300
                       Orbital period[d]:
-                
+                        -769.68
                       Inclination[°]
+                        145.574
                     \\\\\-77
                     Aoede
                       Diameter[km]:
-                
+                        4
                       Semi-major axis[km]:
-                
+                        24283000
                       Orbital period[d]:
-                
+                        -773.05
                       Inclination[°]
+                        151.908
                     \\\\\-78
                     S/2003 J 23
                       Diameter[km]:
-                
+                        2
                       Semi-major axis[km]:
-                
+                        24678200
                       Orbital period[d]:
-                
+                        -792.00
                       Inclination[°]
+                        146.155
                     \\\\\-79
                     Callirrhoe
                       Diameter[km]:
-                
+                        9.6
                       Semi-major axis[km]:
-                
+                        24692400
                       Orbital period[d]:
-                
+                        -792.69
                       Inclination[°]
+                        149.792
                     \\\\\-80
                     Sinope
                       Diameter[km]:
-                
+                        35
                       Semi-major axis[km]:
-                
+                        24864100
                       Orbital period[d]:
-                
+                        -800.97
                       Inclination[°]
+                        158.597
 
-
-
-|||||
+||||| https://en.wikipedia.org/wiki/Saturn |||||
 Saturn
-|||||
+  Orbital Period(sidereal)[d]: 
+    10,759.22
+  Avg Orbital Velocity[km/s]: 
+    9.68
+  Mean radius[km]: 
+    60,268
+  Aphelion[mil km]: 
+    1,514.50
+  Perihelion[mil km]: 
+    1,352.55
+  Inclination(to Sun's equator)[°]:
+    5.51
+  Rotation Period(sidereal)[h]:
+    10:33:38
+  Axial Tilt(to orbit)[°]:
+    26.73
+  \\\\\ https://en.wikipedia.org/wiki/Moons_of_Saturn /////
+
+
+||||| https://en.wikipedia.org/wiki/Uranus |||||
 Uranus
-|||||
+  Orbital Period(sidereal)[d]: 
+    30,688.5
+  Avg Orbital Velocity[km/s]: 
+    6.80
+  Mean radius[km]: 
+    25,362
+  Aphelion[Gm]: 
+    3006.39
+  Perihelion[Gm]: 
+    2735.56
+  Inclination(to Sun's equator)[°]:
+    6.48
+  Rotation Period(sidereal)[h]:
+    17:14:23s
+  Axial Tilt(to orbit)[°]:
+    97.77
+  \\\\\ https://en.wikipedia.org/wiki/Moons_of_Uranus /////
+
+||||| https://en.wikipedia.org/wiki/Neptune |||||
 Neptune
-|||||
+  Orbital Period(sidereal)[d]: 
+    60,195
+  Avg Orbital Velocity[km/s]: 
+    5.43
+  Mean radius[km]: 
+    24,622
+  Aphelion[Bil km]: 
+    4.54
+  Perihelion[Bil km]: 
+    4.46
+  Inclination(to Sun's equator)[°]:
+    6.43
+  Rotation Period(sidereal)[h]:
+    16:06:36
+  Axial Tilt(to orbit)[°]:
+    28.32
+  \\\\\ https://en.wikipedia.org/wiki/Moons_of_Neptune /////
+
+||||| https://en.wikipedia.org/wiki/Pluto |||||
 Pluto
+  Orbital Period(sidereal)[d]: 
+    90,560
+  Avg Orbital Velocity[km/s]: 
+    4.743
+  Mean radius[km]: 
+    1,188.3
+  Aphelion[Bil km]: 
+    7.37593
+  Perihelion[Bil km]: 
+    4.43682
+  Inclination(to Sun's equator)[°]:
+    11.88
+  Rotation Period(sidereal)[d]:
+    −6.387230
+  Axial Tilt(to orbit)[°]:
+    122.53
+  \\\\\ https://en.wikipedia.org/wiki/Moons_of_Pluto /////
+
 |||||
 Voyager I
 |||||
@@ -951,11 +1093,11 @@ temp planet:
     
   Mean radius[km]: 
     
-  Apogee[km]: 
+  Aphelion[km]: 
     
-  Periapsis[km]: 
+  Perihelion[km]: 
     
-  Inclination(to 's equator)[°]:
+  Inclination(to Sun's equator)[°]:
     
   Rotation Period(sidereal)[d]:
     

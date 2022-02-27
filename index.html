@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="./base.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title> Saturn Web App ~ okrun.softworks</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.js"></script>
+    <script src="./src/OrbitControls.js"></script>
+</head>
+<body>
+  <ul>
+    <li class="footer"><a href="https://okrunsoftworks.com">return home</a></div>
+    <li><button type="button" class="btn btn-info" button id="myBtn">ⓘ</button>
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&nbsp;&times;&nbsp;</span>
+          <h3>Interactive Planet</h3>
+          Author: Nicholas Corley<br>
+          License: MIT<br>
+          This three dimensional model was created using Javascript and THREE.js.<br>
+          Special thanks to Mr.Doob (Ricardo Cabello) for maintaining documentation<br>
+          throughout the years and providing script that made this possible.<br>
+          Additionally, I would like to thank those who published the textures<br>
+          used to wrap the geography.<br><br>
+          All works and content displayed in this production are for demonsration purposes only.<br>
+          Any additional information or requests can be submitted to <a href="mailto:okrun.softworks@protonmail.com">here</a>
+          <br><a href="https://www.github.com/okrun-softworks/interactive-planet">link to source</a> 
+      </div>
+    </div>
+    </li>
+  </ul>
+  <script>
+    var modal = document.getElementById("infoModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  <script src="/src/main.js"></script>
+  </body>
+
+</html>
