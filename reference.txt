@@ -1,0 +1,258 @@
+--------------------------- Solar System Layout ---------------------------
+|||||https://en.wikipedia.org/wiki/Sun
+Sun
+  Mean radius[km]: 
+    4.379×10^6
+  Rotation Period(sidereal)[d]:
+    25.05 
+  Mean Radiance[|sol]
+    2.009×10^7 W·m^−2·sr^−1
+|||||https://en.wikipedia.org/wiki/Mercury
+Mercury
+  Orbital Period(sidereal)[d]: 
+    87.9691
+  Avg Orbital Velocity[km/s]: 
+    47.36
+  Mean radius[km]: 
+    2,439.7
+  Aphelion[km]: 
+    69,816,900
+  Perihelion[km]: 
+    46,001,200
+  Inclination(to Sun's equator)[°]:
+    3.86
+  Rotation Period(sidereal)[d]:
+    58.646
+  Axial Tilt(to orbit)[°]:
+    2.04
+|||||https://en.wikipedia.org/wiki/Venus
+Venus
+  Orbital Period(sidereal)[d]: 
+    224.701
+  Avg Orbital Velocity[km/s]: 
+    35.02
+  Mean radius[km]: 
+    6051.8
+  Aphelion[km]: 
+    108,939,000
+  Perihelion[km]: 
+    107,477,000
+  Inclination(to Sun's equator)[°]:
+    3.86
+  Rotation Period(sidereal)[d]:
+    -243.0226
+  Axial Tilt(to orbit)[°]:
+    177.36
+|||||https://en.wikipedia.org/wiki/Earth
+Earth
+  Orbital Period(sidereal)[d]: 
+    365.256
+  Avg Orbital Velocity[km/s]: 
+    29.78
+  Mean radius[km]: 
+    6371.0
+  Aphelion[km]: 
+    152,100,000
+  Perihelion[km]: 
+    147,095,000
+  Inclination(to Sun's equator)[°]:
+    7.155
+  Rotation Period(sidereal)[d]:
+    0.99726968
+  Axial Tilt(to orbit)[°]:
+    23.43
+
+  \\\\\https://en.wikipedia.org/wiki/Moon
+  Moon
+    Orbital Period(sidereal)[d]: 
+      27.321
+    Avg Orbital Velocity[km/s]: 
+      1.022
+    Mean radius[km]: 
+      1737.4
+    Apoapsis[km]: 
+      405400
+    Periapsis[km]: 
+      362600
+    Inclination(to Earth's equator)[°]:
+      5.145
+    Rotation Period(sidereal)[d]:
+      27.321
+    Axial Tilt(to orbit)[°]:
+      6.687
+|||||https://en.wikipedia.org/wiki/Mars
+Mars
+  Orbital Period(sidereal)[d]: 
+    686.980
+  Avg Orbital Velocity[km/s]: 
+    24.007
+  Mean radius[km]: 
+    3389.5
+  Aphelion[km]: 
+    249,200,000
+  Perihelion[km]: 
+    206,700,000
+  Inclination(to Sun's equator)[°]:
+    5.65
+  Rotation Period(sidereal)[d]:
+    1.025
+  Axial Tilt(to orbit)[°]:
+    25.19
+  \\\\\https://en.wikipedia.org/wiki/Phobos_(moon)
+  Phobos
+    Orbital Period(sidereal)[d]: 
+      0.318
+    Avg Orbital Velocity[km/s]: 
+      2.138
+    Mean radius[km]: 
+      11.2667
+    Apoapsis[km]: 
+      9517.58
+    Periapsis[km]: 
+      9234.42
+    Inclination(to Mars's equator)[°]:
+      1.093
+    Rotation Period(sidereal)[d]:
+      0.318
+    Axial Tilt(to orbit)[°]:
+      0
+  \\\\\https://en.wikipedia.org/wiki/Deimos_(moon)    
+  Deimos
+    Orbital Period(sidereal)[d]: 
+      1.263
+    Avg Orbital Velocity[km/s]: 
+      1.3513
+    Dimensions[km]:	
+      15, 12.2, 11
+    Apogee[km]: 
+      23470.9
+    Periapsis[km]: 
+      23455.5
+    Inclination(to Mars's equator)[°]:
+      0.93
+    Rotation Period(sidereal)[d]:
+      1.025
+    Axial Tilt(to orbit)[°]:
+|||||https://en.wikipedia.org/wiki/Jupiter
+Jupiter
+  Orbital Period(sidereal)[d]: 
+    4,332.59
+  Avg Orbital Velocity[km/s]: 
+    13.07
+  Mean radius[km]: 
+    69,911
+  Aphelion[Gm]: 
+    816.62
+  Perihelion[Gm]: 
+    740.52
+  Inclination(to Sun's equator)[°]:
+    6.09
+  Rotation Period(sidereal)[h]:
+    9.9250
+  Axial Tilt(to orbit)[°]:
+    3.13
+  \\\\\https://en.wikipedia.org/wiki/Moons_of_Jupiter
+  _________
+  __Inner__
+  \\\\\
+  Metis
+   \\\\\
+   Adrastea
+    \\\\\
+    Amalthea
+     \\\\\
+     Thebe
+  ____________
+  __Galilean__
+  \\\\\
+  Io
+   \\\\\
+   Europa
+    \\\\\
+    Ganymede
+     \\\\\
+     Callisto
+  _______________
+  __Ungrouped-0__
+  \\\\\
+  Themisto
+  ___________
+  __Himalia__
+  \\\\\
+  Leda
+   \\\\\
+   Ersa
+    \\\\\
+    Pandia
+     \\\\\
+     Himalia
+      \\\\\
+      Lysithea
+       \\\\\
+       Elara
+        \\\\\
+        Dia
+  _______________
+  __Ungrouped-1__
+  \\\\\
+  Carpo
+  \\\\\
+  Valetudo
+  __________
+  __Ananke__
+  \\\\\
+  Euporie
+   \\\\\
+   Eupheme
+    \\\\\
+    S/2003 J 18
+     \\\\\
+     S/2010 J 2
+      \\\\\
+      Helike
+       \\\\\
+       S/2003 J 16
+        /////
+        S/2003 J 2
+         /////
+         Euanthe
+          /////
+          S/2017 J 7
+           /////
+           Hermippe
+            /////
+            Praxidike
+
+
+
+|||||
+Saturn
+|||||
+Uranus
+|||||
+Neptune
+|||||
+Pluto
+|||||
+Voyager I
+|||||
+Voyager II
+
+
+temp:
+  Orbital Period(sidereal)[d]: 
+    
+  Avg Orbital Velocity[km/s]: 
+    
+  Mean radius[km]: 
+    
+  Apogee[km]: 
+    
+  Periapsis[km]: 
+    
+  Inclination(to 's equator)[°]:
+    
+  Rotation Period(sidereal)[d]:
+    
+  Axial Tilt(to orbit)[°]:
+      
