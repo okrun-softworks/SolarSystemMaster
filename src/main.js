@@ -1,7 +1,8 @@
 let scene, camera, renderer, light;
 let background, sun;
 var controls;
-
+clock = new THREE.Clock();
+// import * as LensflareJs from 'src/Lensflare.js';
 init();
 animate();
 
@@ -10,7 +11,7 @@ function init() {
   scene = new THREE.Scene();
   scene.background = new THREE.Color( 0x000000 );
 
-  //camera
+  // camera
   camera = new THREE.PerspectiveCamera(
     7,
     window.innerWidth / window.innerHeight,
@@ -18,40 +19,20 @@ function init() {
     20000000000
     );
   camera.position.x = 0
-  camera.position.y = 0 //0
-  camera.position.z = 20000000
-  camera.rotation.y = 45;
+  camera.position.y = 0 
+  camera.position.z = 200
       
-  //object rotate function
+  // object rotate function
   function rotateObject(object, degreeX = 0, degreeY = 0, degreeZ = 0) {
     object.rotateX(THREE.Math.degToRad(degreeX));
     object.rotateY(THREE.Math.degToRad(degreeY));
     object.rotateZ(THREE.Math.degToRad(degreeZ));
   }
   
-  //texture loader
+  // texture loader
   const textureLoader = new THREE.TextureLoader();
-    
-  // starfield geometry spec
-  // const starfieldGeo = new THREE.SphereGeometry(875, 30, 30 );
-  // const starfieldMat = new THREE.MeshBasicMaterial({ 
-  //   side: THREE.BackSide,
-  //   emissive: 0xffffff, 
-  //   emissiveIntensity: 0.01,
-  //   map: textureLoader.load("resources/starBox/starBoxMaster.png", 
-  //     function (starfieldMat) {
-  //       starfieldMat.wrapS = starfieldMat.wrapT = THREE.RepeatWrapping;
-  //       starfieldMat.offset.set( 0, 1 );
-  //       starfieldMat.repeat.set( 80, 80 );
-  //     })
-  // });
-  // background = new THREE.Mesh(starfieldGeo, starfieldMat);
-  // background.rotateY(45);
-  // background.castShadow = false;
-  // background.receiveShadow = false;
-  // scene.add(background);
-
-  //create starfield
+  
+  // STARFIELD & MILKYWAY
   var starFieldDistance = 22000000;    
   var star = new THREE.Geometry();
   
@@ -374,79 +355,217 @@ function init() {
    scene.add(eventHorizonParticles);
    eventHorizonParticles.position.set (0, 20, 195000000);
 
-  //sun
-  const sunGeo = new THREE.SphereGeometry(0.696342, 30, 30, 6);
-  const sunMat = new THREE.MeshLambertMaterial({
-    emissive: 0xFF9444, 
-    emissiveIntensity: 0.87,  
-    map: textureLoader.load("resources/wrappers/sunTexture.png",
+  // PLANETS AND ORBITAL BODIES
+  // sun
+  const sunGeo = new THREE.SphereGeometry(6.96342, 30, 30, 6);
+  const sunMat = new THREE.MeshBasicMaterial({
+    emissive: 0xFEE454, 
+    emissiveIntensity: 0.5,  
+    map: textureLoader.load("resources/wrappers/sunBaseTexture.png",
     function (sunMat) {
       sunMat.wrapS = sunMat.wrapT = THREE.RepeatWrapping;
       sunMat.offset.set( 0, 0 );
       sunMat.repeat.set( 1, 1 );
     }),
-    normalMap: textureLoader.load("resources/wrappers/sunTexture.png")
+    normalMap: textureLoader.load("resources/wrappers/sunBaseTexture.png")
   });
   sun = new THREE.Mesh(sunGeo, sunMat);
-  sun.transparent = true;
+  sun.material.transparent = true;
+  sun.material.opacity = 1;
   sun.position.set(0, 0, 0);
   sun.rotation.x = Math.PI * 0.002;
   sun.castShadow = false;
   sun.receiveShadow = false;
   scene.add(sun);
 
-  const sunHaloGeo = new THREE.SphereGeometry(0.69, 30, 30, 6);
-  const sunHaloMat = new THREE.MeshLambertMaterial({
-    emissive: 0xFF9444, 
-    emissiveIntensity: 0.9,  
-    map: textureLoader.load("resources/wrappers/sunTexture.png",
+  // sun halo
+  const sunHaloGeo = new THREE.SphereGeometry(7.06, 64, 64, 3);
+  const sunHaloMat = new THREE.MeshBasicMaterial({
+    emissive: 0xFEE454, 
+    emissiveIntensity: 0,  
+    map: textureLoader.load("resources/wrappers/sunBaseTexture.png",
     function (sunHaloMat) {
       sunHaloMat.wrapS = sunMat.wrapT = THREE.RepeatWrapping;
-      sunHaloMat.offset.set( 1, 1 );
-      sunHaloMat.repeat.set( 5, 5 );
+      sunHaloMat.offset.set( 0, 0 );
+      sunHaloMat.repeat.set( 1, 1 );
     }),
-    normalMap: textureLoader.load("resources/wrappers/sunTexture.png")
+    normalMap: textureLoader.load("resources/wrappers/sunBaseTexture.png")
   });
   sunHalo = new THREE.Mesh(sunHaloGeo, sunHaloMat);
   sunHalo.material.transparent = true;
-  sunHalo.material.opacity = 0.15;
+  sunHalo.material.opacity = 0.85;
   sunHalo.position.set(0, 0, 0);
-  sunHalo.rotation.x = Math.PI * 5;
+  sunHalo.rotation.y = Math.PI * 5;
   sunHalo.castShadow = false;
   sunHalo.receiveShadow = false;
   scene.add(sunHalo);
 
-  const sunCoronaGeo = new THREE.SphereGeometry(0.701, 30, 30, 6);
-  const sunCoronaMat = new THREE.MeshLambertMaterial({
-    emissive: 0xFF9444, 
-    emissiveIntensity: 0.5,  
-    map: textureLoader.load("resources/wrappers/sunTexture.png",
-    function (sunHaloMat) {
-      sunCoronaMat.wrapS = sunMat.wrapT = THREE.RepeatWrapping;
-      sunCoronaMat.offset.set( 1, 1 );
-      sunCoronaMat.repeat.set( 5, 5 );
-    }),
-    normalMap: textureLoader.load("resources/wrappers/sunTexture.png")
+  // sun corona
+  const sunCoronaGeo = new THREE.SphereGeometry(7.15, 30, 30, 6);
+  const sunCoronaMat = new THREE.MeshBasicMaterial({
+    emissive: 0xFEEA78, 
+    emissiveIntensity: 0.7,  
+    map: textureLoader.load( "resources/wrappers/sunBaseTexture.png")
   });
   sunCorona = new THREE.Mesh(sunCoronaGeo, sunCoronaMat);
   sunCorona.material.transparent = true;
-  sunCorona.material.opacity = 0.5;
+  sunCorona.material.opacity = 0.45;
   sunCorona.position.set(0, 0, 0);
-  sunCorona.rotation.x = Math.PI * 5;
+  sunCorona.rotation.x = Math.PI * 3;
   sunCorona.castShadow = false;
   sunCorona.receiveShadow = false;
   scene.add(sunCorona);
   sun.add(milkyWayBoxMotionParticles); 
   sunCorona.add(milkyWayBoxMotionParticles); 
 
+  // sun corona Ex
+  const sunCoronaExGeo = new THREE.SphereGeometry(7.25, 30, 30, 6);
+  const sunCoronaExMat = new THREE.MeshBasicMaterial({
+    emissive: 0xFEEA78, 
+    emissiveIntensity: 0.7,  
+    map: textureLoader.load( "resources/wrappers/sunCoronaExTexture.png")
+  });
+  sunCoronaEx = new THREE.Mesh(sunCoronaExGeo, sunCoronaExMat);
+  sunCoronaEx.material.transparent = true;
+  sunCoronaEx.material.opacity = 0.75;
+  sunCoronaEx.position.set(0, 0, 0);
+  sunCoronaEx.rotation.y = Math.PI * 5;
+  sunCoronaEx.castShadow = false;
+  sunCoronaEx.receiveShadow = false;
+  scene.add(sunCoronaEx);
+  sun.add(milkyWayBoxMotionParticles); 
+  sunCoronaEx.add(milkyWayBoxMotionParticles); 
+
+  // mercury
+  const mercuryGeo = new THREE.SphereGeometry(0.024397, 30, 30, 6);
+  const mercuryMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/mercuryTexture.png") 
+  });
+  mercury = new THREE.Mesh(mercuryGeo, mercuryMat);
+  mercury.rotation.x = Math.PI * 0.002;
+  mercuryObj = new THREE.Object3D();
+  mercuryObj.add(mercury);
+  scene.add(mercuryObj);
+  mercury.position.set(698.169, 0, 0);
+  mercury.rotation.y = Math.PI * 2.31;
+
+  // venus
+  const venusGeo = new THREE.SphereGeometry(0.060518, 30, 30, 6);
+  const venusMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/venusTexture.png") 
+  });
+  venus = new THREE.Mesh(venusGeo, venusMat);
+  venus.rotation.x = Math.PI * 0.002;
+  venusObj = new THREE.Object3D();
+  venusObj.add(venus);
+  scene.add(venusObj);
+  venus.position.set(1089.39, 0, 0); 
+
+  // earth
+  const earthGeo = new THREE.SphereGeometry(0.063710, 30, 30, 6);
+  const earthMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/earthTexture.png") 
+  });
+  earth = new THREE.Mesh(earthGeo, earthMat);
+  earth.rotation.x = Math.PI * 0.002;
+  earthObj = new THREE.Object3D();
+  earthObj.add(earth);
+  scene.add(earthObj);
+  earth.position.set(1521, 0, 0); 
+
+  // moon
+  const moonGeo = new THREE.SphereGeometry(0.017374, 30, 30, 6);
+  const moonMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/moonTexture.png") 
+  });
+  moon = new THREE.Mesh(moonGeo, moonMat);
+  moon.rotation.x = Math.PI * 0.002;
+  moonObj = new THREE.Object3D();
+  moonObj.add(moon);
+  earth.add(moonObj);
+  moon.position.set(4.054, 0, 0); 
+
+  // mars
+  const marsGeo = new THREE.SphereGeometry(0.033895, 30, 30, 6);
+  const marsMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/marsTexture.png") 
+  });
+  mars = new THREE.Mesh(marsGeo, marsMat);
+  mars.rotation.x = Math.PI * 0.002;
+  marsObj = new THREE.Object3D();
+  marsObj.add(mars);
+  scene.add(marsObj);
+  mars.position.set(2492, 0, 0); 
+
+  // jupiter
+  const jupiterGeo = new THREE.SphereGeometry(0.69911, 30, 30, 6);
+  const jupiterMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/jupiterTexture.png") 
+  });
+  jupiter = new THREE.Mesh(jupiterGeo, jupiterMat);
+  jupiter.rotation.x = Math.PI * 0.002;
+  jupiterObj = new THREE.Object3D();
+  jupiterObj.add(jupiter);
+  scene.add(jupiterObj);
+  jupiter.position.set(8166.2, 0, 0); 
+
+  // saturn
+  const saturnGeo = new THREE.SphereGeometry(0.60268, 30, 30, 6);
+  const saturnMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/saturnTexture.png") 
+  });
+  saturn = new THREE.Mesh(saturnGeo, saturnMat);
+  saturn.rotation.x = Math.PI * 0.002;
+  saturnObj = new THREE.Object3D();
+  saturnObj.add(saturn);
+  scene.add(saturnObj);
+  saturn.position.set(15145, 0, 0);
+
+  // uranus
+  const uranusGeo = new THREE.SphereGeometry(0.25362, 30, 30, 6);
+  const uranusMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/uranusTexture.png") 
+  });
+  uranus = new THREE.Mesh(uranusGeo, uranusMat);
+  uranus.rotation.x = Math.PI * 0.002;
+  uranusObj = new THREE.Object3D();
+  uranusObj.add(uranus);
+  scene.add(uranusObj);
+  uranus.position.set(45400, 0, 0);
+
+  // neptune
+  const neptuneGeo = new THREE.SphereGeometry(0.24622, 30, 30, 6);
+  const neptuneMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/neptuneTexture.png") 
+  });
+  neptune = new THREE.Mesh(neptuneGeo, neptuneMat);
+  neptune.rotation.x = Math.PI * 0.002;
+  neptuneObj = new THREE.Object3D();
+  neptuneObj.add(neptune);
+  scene.add(neptuneObj);
+  neptune.position.set(30063.9, 0, 0);
+  
+  // pluto
+  const plutoGeo = new THREE.SphereGeometry(0.011883, 30, 30, 6);
+  const plutoMat = new THREE.MeshLambertMaterial({
+    map: textureLoader.load("resources/wrappers/plutoTexture.png") 
+  });
+  pluto = new THREE.Mesh(plutoGeo, plutoMat);
+  pluto.rotation.x = Math.PI * 0.002;
+  plutoObj = new THREE.Object3D();
+  plutoObj.add(pluto);
+  scene.add(plutoObj);
+  pluto.position.set(73759.3, 0, 0); 
+  
   //renderer
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
   //lighting + shadow
-  scene.add(new THREE.AmbientLight(0xFAF8E0, 1));
-  light = new THREE.DirectionalLight(0xfdfdfd, 0, 0);
-  light.position.set(200, -50, 190);
+  scene.add(new THREE.AmbientLight(0xFAF8E0, 0.02));
+  light = new THREE.PointLight(0xfdfdfd, 0.78, 20000000, 0, 20);
+  light.position.set(0, 0, 0);
   light.castShadow = true;
   scene.add(light);
   
@@ -454,9 +573,21 @@ function init() {
   light.shadow.mapSize.height = 4096;
   light.shadow.camera.near = 0.5;
   light.shadow.camera.far = 500;
+
+  // lens flare
+  // const textureFlare1 = textureLoader.load( "resources/lensflare/lensflare1.png" );
+  // const textureFlare2 = textureLoader.load( "resources/lensflare/lensflare2.png" );
+
+  // const Lensflare = new THREE.Lensflare();
+
+  // Lensflare.addElement( new LensflareElement( textureFlare1, 512, 0 ) );
+  // Lensflare.addElement( new LensflareElement( textureFlare2, 60, 0.6 ) );
+
+  // light.add( lensflare );
   
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
+
   //orbit controls
   controls = new THREE.OrbitControls (camera);
   controls.addEventListener( 'change', renderer );
@@ -471,11 +602,31 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
-  
+
 function animate() {
-  sun.rotation.y += 0.00050;
-  sunHalo.rotation.y += 0.00070;
-  sunCorona.rotation.z += 0.00070;
+  sun.rotation.y += 0.0004;
+  sunHalo.rotation.y += 0.0002;
+  sunCorona.rotation.z += 0.0002;
+  mercury.rotation.y += 0.00058646;
+  mercuryObj.rotation.y += 0.005;
+  venus.rotation.y += -0.00002430226;
+  venusObj.rotation.y += 0.005;
+  earth.rotation.y += 0.00099726968;
+  earthObj.rotation.y += 0.005;
+  moon.rotation.y += 0.00027321;
+  moonObj.rotation.y += 0.005;
+  mars.rotation.y += 0.0001025;
+  marsObj.rotation.y += 0.005;
+  jupiter.rotation.y += 0.0099250;
+  jupiterObj.rotation.y += 0.005;
+  saturn.rotation.y += 0.00103338;
+  saturnObj.rotation.y += 0.005;
+  uranus.rotation.y += 0.00171423;
+  uranusObj.rotation.y += 0.005;
+  neptune.rotation.y += 0.00160636;
+  neptuneObj.rotation.y += 0.005;
+  pluto.rotation.y += -0.000638723;
+  plutoObj.rotation.y += 0.005;
   
   renderer.render(scene, camera);
   requestAnimationFrame(animate);

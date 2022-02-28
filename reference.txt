@@ -23,6 +23,7 @@ Mercury
     3.86
   Rotation Period(sidereal)[d]:
     58.646
+    rotationalSpeed = 2 * PI / 86,400
   Axial Tilt(to orbit)[°]:
     2.04
 ||||| https://en.wikipedia.org/wiki/Venus |||||
