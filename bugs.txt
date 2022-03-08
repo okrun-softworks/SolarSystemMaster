@@ -1,0 +1,19 @@
+*bugs
+-there is text decoration (list bullet) attached to background in style.css !!all components.
+
+//change camera position
+var testButton = document.getElementById('Mercury');
+testButton.onclick = function ()
+{
+    camera.position.set (8010, -6763.76713, 0); 
+    camera.lookAt(new THREE.Vector3(0, -6763.76713, 0));
+    webGLRenderer.render(scene, camera);
+}; 
+
+
+lol
+  for ( let i = 0; i < 2000; i ++ ) { 
+    ringMesh = 1000 + i; 
+    var saturnRingInnerDistance = ringMesh;
+    console.log(ringMesh);
+  }  

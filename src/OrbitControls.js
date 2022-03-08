@@ -214,7 +214,7 @@ THREE.OrbitControls = function ( object, domElement, localElement ) {
 
 		var position = this.object.position;
 		var offset = position.clone().sub( this.target );
-
+      
 		// angle from z-axis around y-axis
 
 		var theta = Math.atan2( offset.x, offset.z );

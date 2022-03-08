@@ -18,9 +18,6 @@ function init() {
     5,
     20000000000
     );
-  camera.position.x = 0
-  camera.position.y = 0 
-  camera.position.z = 200
       
   // object rotate function
   function rotateObject(object, degreeX = 0, degreeY = 0, degreeZ = 0) {
@@ -356,6 +353,47 @@ function init() {
    eventHorizonParticles.position.set (0, 20, 195000000);
 
   // PLANETS AND ORBITAL BODIES
+
+  // sunCore0
+  const sunCore0Geo = new THREE.SphereGeometry(2, 30, 30, 6);
+  const sunCore0Mat = new THREE.MeshBasicMaterial({
+    emissive: 0xFEE454, 
+    emissiveIntensity: 0.6,  
+    map: textureLoader.load("resources/wrappers/sunCore0BaseTexture.png",
+    function (sunCore0Mat) {
+      sunCore0Mat.wrapS = sunCore0Mat.wrapT = THREE.RepeatWrapping;
+      sunCore0Mat.offset.set( 0, 0 );
+      sunCore0Mat.repeat.set( 1, 1 );
+    }),
+    normalMap: textureLoader.load("resources/wrappers/sunCore0BaseTexture.png")
+  });
+  sunCore0 = new THREE.Mesh(sunCore0Geo, sunCore0Mat);
+  sunCore0.material.transparent = true;
+  sunCore0.material.opacity = 1;
+  sunCore0.position.set(0, 0, 0);
+  sunCore0.rotation.x = Math.PI * 0.002;
+  scene.add(sunCore0);
+
+  // sunCore1
+  const sunCore1Geo = new THREE.SphereGeometry(2.5, 30, 30, 6);
+  const sunCore1Mat = new THREE.MeshBasicMaterial({
+    emissive: 0xFEE454, 
+    emissiveIntensity: 0.6,  
+    map: textureLoader.load("resources/wrappers/sunCore1BaseTexture.png",
+    function (sunCore1Mat) {
+      sunCore1Mat.wrapS = sunCore1Mat.wrapT = THREE.RepeatWrapping;
+      sunCore1Mat.offset.set( 0, 0 );
+      sunCore1Mat.repeat.set( 1, 1 );
+    }),
+    normalMap: textureLoader.load("resources/wrappers/sunCore1BaseTexture.png")
+  });
+  sunCore1 = new THREE.Mesh(sunCore1Geo, sunCore1Mat);
+  sunCore1.material.transparent = true;
+  sunCore1.material.opacity = 1;
+  sunCore1.position.set(0, 0, 0);
+  sunCore1.rotation.x = Math.PI * 0.002;
+  scene.add(sunCore1);
+
   // sun
   const sunGeo = new THREE.SphereGeometry(6.96342, 30, 30, 6);
   const sunMat = new THREE.MeshBasicMaterial({
@@ -497,6 +535,57 @@ function init() {
   scene.add(marsObj);
   mars.position.set(2492, 0, 0); 
 
+  //asteroidBelt0
+  var asteroidBelt0Distance = 4500;    
+  var asteroidBelt0 = new THREE.TorusGeometry();
+ 
+    for (var i = 0; i < 1000; i++) {
+      var asteroidBelt0Vertex = new THREE.Vector3();
+
+      var asteroidBelt0Theta = THREE.Math.randFloatSpread(360); 
+      var asteroidBelt0Phi = THREE.Math.randFloatSpread(1.2);
+
+      asteroidBelt0Vertex.x = (asteroidBelt0Distance * Math.sin(asteroidBelt0Theta) * Math.cos(asteroidBelt0Phi));
+      asteroidBelt0Vertex.y = asteroidBelt0Distance * Math.sin(asteroidBelt0Theta) * Math.sin(asteroidBelt0Phi) / 28;
+      asteroidBelt0Vertex.z = asteroidBelt0Distance * Math.cos(asteroidBelt0Theta);
+
+      asteroidBelt0.vertices.push(asteroidBelt0Vertex);
+    }
+
+  var asteroidBelt0Particles = new THREE.PointCloud(asteroidBelt0, 
+  new THREE.PointCloudMaterial({color: 0x525567}));
+    
+  asteroidBelt0Particles.boundingSphere = 50;
+    
+  sunCore0.add(asteroidBelt0Particles);
+  asteroidBelt0Particles.position.set (0, 0, 0);
+
+  //asteroidBelt1
+  var asteroidBelt1Distance = 4350;    
+  var asteroidBelt1 = new THREE.TorusGeometry();
+ 
+    for (var i = 0; i < 1000; i++) {
+      var asteroidBelt1Vertex = new THREE.Vector3();
+
+      var asteroidBelt1Theta = THREE.Math.randFloatSpread(360); 
+      var asteroidBelt1Phi = THREE.Math.randFloatSpread(1.2);
+
+      asteroidBelt1Vertex.x = (asteroidBelt1Distance * Math.sin(asteroidBelt1Theta) * Math.cos(asteroidBelt1Phi));
+      asteroidBelt1Vertex.y = asteroidBelt1Distance * Math.sin(asteroidBelt1Theta) * Math.sin(asteroidBelt1Phi) / 28;
+      asteroidBelt1Vertex.z = asteroidBelt1Distance * Math.cos(asteroidBelt1Theta);
+
+      asteroidBelt1.vertices.push(asteroidBelt1Vertex);
+    }
+
+  var asteroidBelt1Particles = new THREE.PointCloud(asteroidBelt1, 
+  new THREE.PointCloudMaterial({color: 0x525567}));
+    
+  asteroidBelt1Particles.boundingSphere = 50;
+    
+  sunCore1.add(asteroidBelt1Particles);
+  asteroidBelt1Particles.position.set (0, 0, 0);
+  asteroidBelt1Particles.rotation.y = 90;
+
   // jupiter
   const jupiterGeo = new THREE.SphereGeometry(0.69911, 30, 30, 6);
   const jupiterMat = new THREE.MeshLambertMaterial({
@@ -596,6 +685,8 @@ function init() {
   controls.minDistance = 4;
   controls.maxDistance = 1500000000;
 }
+controls.target = new THREE.Vector3( 2000000, 20000, 0);
+controls.update();
 
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
@@ -604,6 +695,8 @@ function onWindowResize() {
 }
 
 function animate() {
+  sunCore0.rotation.y += 0.00002;
+  sunCore1.rotation.y += 0.000002;
   sun.rotation.y += 0.0004;
   sunHalo.rotation.y += 0.0002;
   sunCorona.rotation.z += 0.0002;

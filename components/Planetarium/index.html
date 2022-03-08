@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="base.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title> Planetarium / Solis </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.js"></script>
+    <script src="../../tween.js/dist/tween.umd.js"></script>
+</head>
+<body>
+  <div class="loader">
+    <img src = "../../resources/preloader/webPreloader.gif" alt="Loading..."/>
+  </div>
+    <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div class="dropdown">
+      <button onclick="dropdownSun()" class="dropbtn sun">Sun</button>
+      <div id="dropdown sun" class="dropdown-content">
+        <a href="#" id="sunDiameter">Fly to Diameter</a>
+        <a href="#" id="sunCoreView">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownMercury()" class="dropbtn mercury">Mercury</button>
+      <div id="dropdown mercury" class="dropdown-content">
+        <a href="#" id="mercuryDiameter">Fly to Diameter</a>
+        <a href="#" id="mercuryOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownVenus()" class="dropbtn venus">Venus</button>
+      <div id="dropdown venus" class="dropdown-content">
+        <a href="#" id="venusDiameter">Fly to Diameter</a>
+        <a href="#" id="venusOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownEarth()" class="dropbtn earth">Earth</button>
+      <div id="dropdown earth" class="dropdown-content">
+        <a href="#" id="earthDiameter">Fly to Diameter</a>
+        <a href="#" id="earthOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownMars()" class="dropbtn mars">Mars</button>
+      <div id="dropdown mars" class="dropdown-content">
+        <a href="#" id="marsDiameter">Fly to Diameter</a>
+        <a href="#" id="marsOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownAsteroid()" class="dropbtn asteroid">Asteroid Belt</button>
+      <div id="dropdown asteroid" class="dropdown-content">
+        <a href="#" id="asteroidDiameter">Fly to Diameter</a>
+        <a href="#" id="asteroidOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownJupiter()" class="dropbtn jupiter">Jupiter</button>
+      <div id="dropdown jupiter" class="dropdown-content">
+        <a href="#" id="jupiterDiameter">Fly to Diameter</a>
+        <a href="#" id="jupiterOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownSaturn()" class="dropbtn saturn">Saturn</button>
+      <div id="dropdown saturn" class="dropdown-content">
+        <a href="#" id="saturnDiameter">Fly to Diameter</a>
+        <a href="#" id="saturnOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownUranus()" class="dropbtn uranus">Uranus</button>
+      <div id="dropdown uranus" class="dropdown-content">
+        <a href="#" id="uranusDiameter">Fly to Diameter</a>
+        <a href="#" id="uranusOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownNeptune()" class="dropbtn neptune">Neptune</button>
+      <div id="dropdown neptune" class="dropdown-content">
+        <a href="#" id="neptuneDiameter">Fly to Diameter</a>
+        <a href="#" id="neptuneOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="dropdownPluto()" class="dropbtn pluto">Pluto</button>
+      <div id="dropdown pluto" class="dropdown-content">
+        <a href="#" id="plutoDiameter">Fly to Diameter</a>
+        <a href="#" id="plutoOrbit">Fly to Orbit</a>
+      </div>
+    </div>
+    <button type="button" class="modalbtn" button id="modalBtn">ⓘ</button>
+      <div id="infoModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&nbsp;&times;&nbsp;</span>
+          <h3>Planetarium</h3>
+          Author: Nicholas Corley<br>
+          License: MIT<br>
+          This three dimensional model was created using Javascript and THREE.js.<br>
+          Special thanks to Mr.Doob (Ricardo Cabello) for maintaining documentation<br>
+          throughout the years and providing script that made this possible.<br>
+          Additionally, I would like to thank those who published the textures<br>
+          used to wrap the geography.<br><br>
+          All works and content displayed in this production are for demonsration purposes only.<br>
+          Any additional information or requests can be submitted to <a href="mailto:okrun.softworks@protonmail.com">here</a>
+          <br><a href="https://www.github.com/okrun-softworks/interactive-planet">link to source</a> 
+        </div>
+      </div>
+  </div>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Menu</button>  
+  </div>
+  <!-- loader -->
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(function() {
+        const loader = document.querySelector(".loader");
+        loader.className += " hidden"; // class "loader hidden"
+      }, 1300);
+    });
+  </script> 
+  <!-- side bar nav -->
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("main").style.opacity = "0";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.getElementById("main").style.opacity = "100";
+    }
+  </script>
+  <!-- dropdown handler -->
+  <script>
+    // sun
+    function dropdownSun() {
+      document.getElementById("dropdown sun").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn sun')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // mercury
+    function dropdownMercury() {
+      document.getElementById("dropdown mercury").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn mercury')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // venus
+    function dropdownVenus() {
+      document.getElementById("dropdown venus").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn venus')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // earth
+    function dropdownEarth() {
+      document.getElementById("dropdown earth").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn earth')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // mars
+    function dropdownMars() {
+      document.getElementById("dropdown mars").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn mars')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // asteroid belt
+    function dropdownAsteroid() {
+      document.getElementById("dropdown asteroid").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn asteroid')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // jupiter
+    function dropdownJupiter() {
+      document.getElementById("dropdown jupiter").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn jupiter')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // saturn
+    function dropdownSaturn() {
+      document.getElementById("dropdown saturn").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn saturn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // uranus
+    function dropdownUranus() {
+      document.getElementById("dropdown uranus").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn uranus')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // neptune
+    function dropdownNeptune() {
+      document.getElementById("dropdown neptune").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn neptune')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    // pluto
+    function dropdownPluto() {
+      document.getElementById("dropdown pluto").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn pluto')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+  <!-- modal -->
+  <script>
+    var modal = document.getElementById("infoModal");
+    var btn = document.getElementById("modalBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  <script src="planetarium.js"></script>
+  </body>
+
+</html>
